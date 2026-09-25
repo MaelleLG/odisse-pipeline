@@ -1,0 +1,29 @@
+datasets:
+  - id: episodes-depressifs-indicateurs-du-barometre-de-sante-publique-france-2024-detail-region
+    theme: episodes dépréssifs baromètre
+  - id: conduites-suicidaires-indicateurs-du-barometre-de-sante-publique-france-2024-detail-region
+    theme: conduites suicidaires
+  - id: sante-mentale-pensees-suicidaires-et-tentatives-de-suicide_reg
+    theme: pensees et tentatives suicide
+  - id: sante-mentale-episodes-depressifs-caracterises-dans-les-12-derniers-mois_reg
+    theme: episodes dépressifs
+  - id: sedentarite-indicateurs-du-barometre-de-sante-publique-france-2024-detail-region
+    theme: sédentarité
+  - id: activite-physique-indicateurs-du-barometre-de-sante-publique-detail-region
+    theme: activité physique
+  - id: sommeil-indicateurs-du-barometre-2024
+    theme: sommeil
+  - id: corpulence-surpoids-et-obesite-reg
+    theme: corpulence
+  - id: alcool-alcoolisation-ponctuelle-importante-api-mensuel-et-hebdomadaire-region
+    theme: alcoolisation ponctuelle importante
+  - id: alcool-consommation-quotidienne-region
+    theme: alcool quotidien
+  - id: alcool-indicateurs-du-barometre-de-sante-publique-france-2024-detail-region
+    theme: alcool barometre
+  - id: diabete-prevalence-region
+    theme : diabète
+  - id: diabete-indicateurs-du-barometre-2024
+    theme: diabète baromètre
+  - id: hypertension-arterielle-indicateurs-du-barometre-2024
+    theme: hta
