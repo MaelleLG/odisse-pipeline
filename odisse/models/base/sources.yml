@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: odisse
+    description: "Exports Parquet d'Odissé (Santé publique France), téléchargés par ingestion/download.py"
+    meta:
+      external_location: "../data/raw/{name}.parquet"
+    tables:
+      # --- Baromètre 2024 (format long : colonne `indicateur`)
+      - name: activite-physique-indicateurs-du-barometre-de-sante-publique-detail-region
+      - name: sedentarite-indicateurs-du-barometre-de-sante-publique-france-2024-detail-region
+      - name: alcool-indicateurs-du-barometre-de-sante-publique-france-2024-detail-region
+      - name: conduites-suicidaires-indicateurs-du-barometre-de-sante-publique-france-2024-detail-region
+      - name: episodes-depressifs-indicateurs-du-barometre-de-sante-publique-france-2024-detail-region
+      - name: trouble-anxieux-generalise-indicateurs-du-barometre-2024
+      - name: bien-etre-indicateurs-du-barometre-2024
+      - name: sommeil-indicateurs-du-barometre-2024
+      - name: diabete-indicateurs-du-barometre-2024
+      - name: hypertension-arterielle-indicateurs-du-barometre-2024
+      # --- Baromètres santé 2000-2021 (format large : <indic>_v / _icb / _ich / _typo)
+      - name: alcool-consommation-quotidienne-region
+      - name: alcool-alcoolisation-ponctuelle-importante-api-mensuel-et-hebdomadaire-region
+      - name: sante-mentale-pensees-suicidaires-et-tentatives-de-suicide_reg
+      - name: sante-mentale-episodes-depressifs-caracterises-dans-les-12-derniers-mois_reg
+      # --- Autres sources
+      - name: diabete-prevalence-region          # SNDS, 2010-2023
+      - name: corpulence-surpoids-et-obesite-reg  # Esteban 2015-2017
+      - name: troubles-probables-de-sante-mentale-parmi-les-enfants-du-cp-au-cm2-indicateurs-d-enabee-2022

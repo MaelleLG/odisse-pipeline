@@ -1,0 +1,18 @@
+code_region,region,type_territoire
+1,Guadeloupe,DROM
+2,Martinique,DROM
+3,Guyane,DROM
+4,La Réunion,DROM
+11,Île-de-France,Métropole
+24,Centre-Val de Loire,Métropole
+27,Bourgogne-Franche-Comté,Métropole
+28,Normandie,Métropole
+32,Hauts-de-France,Métropole
+44,Grand Est,Métropole
+52,Pays de la Loire,Métropole
+53,Bretagne,Métropole
+75,Nouvelle-Aquitaine,Métropole
+76,Occitanie,Métropole
+84,Auvergne-Rhône-Alpes,Métropole
+93,Provence-Alpes-Côte d'Azur,Métropole
+94,Corse,Métropole

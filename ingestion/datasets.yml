@@ -27,3 +27,9 @@ datasets:
     theme: diabète baromètre
   - id: hypertension-arterielle-indicateurs-du-barometre-2024
     theme: hta
+  - id: bien-etre-indicateurs-du-barometre-2024
+    theme: bien-être
+  - id: trouble-anxieux-generalise-indicateurs-du-barometre-2024
+    theme: troubles anxieux
+  - id: troubles-probables-de-sante-mentale-parmi-les-enfants-du-cp-au-cm2-indicateurs-d-enabee-2022
+    theme: santé mentale enfants

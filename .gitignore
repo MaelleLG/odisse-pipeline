@@ -12,9 +12,9 @@ data/raw/*
 *.duckdb.wal
 
 # dbt
-transform/target/
-transform/dbt_packages/
-transform/logs/
+odisse/target/
+odisse/dbt_packages/
+odisse/logs/
 logs/
 
 # Divers

@@ -1,0 +1,7 @@
+odisse:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/odisse.duckdb
+      threads: 4
