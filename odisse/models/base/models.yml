@@ -1,0 +1,256 @@
+version: 2
+
+models:
+  - name: base_bien_etre
+    description: "Bien-être (score de satisfaction de vie /10), Baromètre 2024 — une ligne par croisement publié"
+    columns:
+      - name: valeur
+        description: "Score moyen de satisfaction de vie actuelle, sur 10"
+        data_tests:
+          - not_null
+  - name: base_anxiete
+    description: "Troubles anxieux (prévalence estimée en %), Baromètre 2024 — une ligne par croisement publié"
+    columns:
+      - name: valeur
+        description: "Prévalence estimée du trouble anxieux généralisé, en % de la population"
+        data_tests:
+          - not_null
+  - name: base_sommeil 
+    description: "Temps de sommeil moyen en minutes sur 24h et répartition des types de dormeurs, Baromètre 2024 — une ligne par croisement publié"
+    columns:
+      - name: valeur
+        description: "Temps de sommeil moyen en minutes sur 24h ou type de dormeurs"
+        data_tests:
+          - not_null
+
+  # --- Modèles ajoutés (relecture Maëlle)
+  - name: base_activite_physique
+    description: "Pratique d'activité physique de loisirs et mobilités domicile-travail (prévalences en %), Baromètre 2024, par région, sexe et âge"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Tous', 'Un homme', 'Une femme']
+      - name: valeur
+        data_tests:
+          - not_null
+  - name: base_sedentarite
+    description: "Sédentarité et ruptures de sédentarité (prévalences en %), Baromètre 2024, par région, sexe, âge, PCS, diplôme et situation financière"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Tous', 'Un homme', 'Une femme']
+      - name: valeur
+        data_tests:
+          - not_null
+  - name: base_alcool
+    description: "Consommation d'alcool, dépassement des repères et envie de réduire (prévalences en %), Baromètre 2024"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Tous', 'Un homme', 'Une femme']
+      - name: valeur
+        data_tests:
+          - not_null
+  - name: base_conduites_suicidaires
+    description: "Pensées suicidaires (12 mois) et tentatives de suicide (vie entière), prévalences en %, Baromètre 2024 — valeurs -30 masquées"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Tous', 'Un homme', 'Une femme']
+      - name: valeur
+        data_tests:
+          - not_null:
+              config:
+                where: "not est_masque"
+  - name: base_episodes_depressifs
+    description: "Épisode dépressif caractérisé (prévalence en %), Baromètre 2024 — valeurs -30 masquées"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Tous', 'Un homme', 'Une femme']
+      - name: valeur
+        data_tests:
+          - not_null:
+              config:
+                where: "not est_masque"
+  - name: base_diabete
+    description: "Diabète déclaré et types de traitement (prévalences en %), Baromètre 2024 — valeurs -30 masquées"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Tous', 'Hommes', 'Femmes']
+      - name: valeur
+        data_tests:
+          - not_null:
+              config:
+                where: "not est_masque"
+  - name: base_hypertension
+    description: "Hypertension artérielle déclarée et traitement (prévalences en %), Baromètre 2024"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Tous', 'Hommes', 'Femmes']
+      - name: valeur
+        data_tests:
+          - not_null
+  - name: base_enfants_enabee
+    description: "Troubles probables de santé mentale chez les enfants du CP au CM2 (prévalences en %), Enabee 2022, France entière"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Tous', 'Fille', 'Garçon']
+      - name: valeur
+        data_tests:
+          - not_null
+  - name: base_alcool_quotidien_hist
+    description: "Consommation quotidienne d'alcool (prévalence en %), Baromètres santé 2000-2021, par région et sexe"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Hommes et Femmes', 'Hommes', 'Femmes']
+      - name: valeur
+        data_tests:
+          - not_null
+  - name: base_alcool_api_hist
+    description: "Alcoolisations ponctuelles importantes mensuelles et hebdomadaires (prévalences en %), Baromètres santé 2005-2021, par région et sexe"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Hommes et Femmes', 'Hommes', 'Femmes']
+      - name: valeur
+        data_tests:
+          - not_null
+  - name: base_pensees_suicidaires_hist
+    description: "Pensées suicidaires et tentatives de suicide (prévalences en %), Baromètres santé 2005-2021, par région et sexe"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Hommes et Femmes', 'Hommes', 'Femmes']
+      - name: valeur
+        data_tests:
+          - not_null
+  - name: base_episodes_depressifs_hist
+    description: "Épisode dépressif caractérisé au cours des 12 derniers mois (prévalence en %), Baromètres santé 2005-2021, par région et sexe"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Hommes et Femmes', 'Hommes', 'Femmes']
+      - name: valeur
+        data_tests:
+          - not_null
+  - name: base_diabete_snds
+    description: "Prévalence du diabète traité, taux standardisé et brut (%), SNDS 2010-2023, par région et sexe"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Hommes et Femmes', 'Hommes', 'Femmes']
+      - name: valeur
+        data_tests:
+          - not_null
+  - name: base_corpulence
+    description: "Surpoids et obésité mesurés (prévalences en %), Esteban 2015-2017, par région et sexe"
+    columns:
+      - name: indicateur
+        data_tests:
+          - not_null
+      - name: annee
+        data_tests:
+          - not_null
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Hommes', 'Femmes']
+      - name: valeur
+        data_tests:
+          - not_null
